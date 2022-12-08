@@ -1,0 +1,35 @@
+.card{
+    width: 600px;
+    background-color: rgba(251, 251, 251, 0.804);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    display: flex;
+    margin-bottom: 50px;
+    
+}
+body{
+    background-color: rgb(38, 2, 66);
+}
+.div1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0px 30px;
+
+}
+#tit{
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.card img{
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 30px 0px 0px;
+}
+.card h3{
+    color: rgb(153, 1, 1);
+}
