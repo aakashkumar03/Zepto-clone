@@ -3,6 +3,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(express.static('./public'))
+
 let Stock = require("./data/db.json");
 
 app.get("/", function (req, res) {
@@ -41,6 +42,56 @@ app.get("/products/beverages",(req, res)=>{
   const bev=Stock.filter((x) => x.cat === "bev" )
   res.render("beverages",{bev})
 })
+
+app.get("/products/beverages/:id", function (req, res) {
+  const det = Stock.find((x) => x.id === req.params.id);
+  if (!det) {
+    res.status(404).send("products not found");
+  } else {
+    res.render("details", { det });
+  }
+});
+
+app.get("/products/grocery/:id", function (req, res) {
+  const det = Stock.find((x) => x.id === req.params.id);
+  if (!det) {
+    res.status(404).send("products not found");
+  } else {
+    res.render("details", { det });
+  }
+});
+app.get("/products/soft-drink/:id", function (req, res) {
+  const det = Stock.find((x) => x.id === req.params.id);
+  if (!det) {
+    res.status(404).send("products not found");
+  } else {
+    res.render("details", { det });
+  }
+});
+app.get("/products/meat/:id", function (req, res) {
+  const det = Stock.find((x) => x.id === req.params.id);
+  if (!det) {
+    res.status(404).send("products not found");
+  } else {
+    res.render("details", { det });
+  }
+});
+app.get("/products/snacks/:id", function (req, res) {
+  const det = Stock.find((x) => x.id === req.params.id);
+  if (!det) {
+    res.status(404).send("products not found");
+  } else {
+    res.render("details", { det });
+  }
+});
+app.get("/products/ice-cream/:id", function (req, res) {
+  const det = Stock.find((x) => x.id === req.params.id);
+  if (!det) {
+    res.status(404).send("products not found");
+  } else {
+    res.render("details", { det });
+  }
+});
 
 
   app.listen(3000, () => {

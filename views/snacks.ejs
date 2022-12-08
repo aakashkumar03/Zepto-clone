@@ -11,19 +11,21 @@
     <%- include('../partials/navBar.ejs') %>
     <h1 id="tit">Snacks</h1>
     <div class="div1">
-    <% sna.map((x)=>{%>
-      <div class="card">
-        <div class="id">
-          <h2>Product Id: <%= x.id %></h2>
-        <img src=<%=x.image%> alt="">
+      <% sna.map((x)=>{%>
+        <% let url=`/products/snacks/${x.id}` %>
+        <div class="card">
+          <div class="id">
+            <!-- <h2>Product Id: <%= x.id %></h2> -->
+          <img src=<%=x.image%> alt="">
+          </div>
+          <div class="ddet">
+            <h1><%= x.productName %></h1>
+          <!-- <h3>Price: <%= x.price%></h3>
+          <p><b>Description:</b> <%= x.description%></p> -->
+          <a href=<%= url %>> See Details</a>
+          </div>
         </div>
-        <div class="ddet">
-          <h1><%= x.productName %></h1>
-        <h3>Price: <%= x.price%></h3>
-        <p><b>Description:</b> <%= x.description%></p>
+          <%})%>
         </div>
-      </div>
-        <%})%>
-      </div>
 </body>
 </html>
